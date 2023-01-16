@@ -5,6 +5,11 @@ void main() {
   String sabor = "Doce e cítrica";
   int diasDesdeColheita = 40;
   bool isMadura = funcEstaMadura(diasDesdeColheita);
+
+  Fruta fruta01 = Fruta(nome, peso, cor, sabor, diasDesdeColheita);
+  Fruta fruta02 = Fruta("Uva", 100, "Roxa", "Doce", 20);
+  fruta01.estaMadura(30);
+  fruta02.estaMadura(60);
 }
 
 class Fruta {
@@ -14,6 +19,14 @@ class Fruta {
   String sabor;
   int diasDesdeColheita;
   bool? isMadura;
+
+  Fruta(this.nome, this.peso, this.cor, this.sabor, this.diasDesdeColheita,
+      {this.isMadura});
+  estaMadura(int diasParaMadura) {
+    isMadura = diasDesdeColheita >= diasParaMadura;
+    print(
+        "A sua $nome foi colhida a $diasDesdeColheita dias, e precisa de $diasParaMadura dias para poder comer. Ela está madura ? $isMadura.");
+  }
 }
 
 funcQuantosDiasMadura(int dias) {
