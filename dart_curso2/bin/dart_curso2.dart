@@ -5,8 +5,15 @@ void main() {
   String sabor = "Doce e cítrica";
   int diasDesdeColheita = 40;
   bool isMadura = funcEstaMadura(diasDesdeColheita);
+}
 
-  funcQuantosDiasMadura(diasDesdeColheita);
+class Fruta {
+  String nome;
+  double peso;
+  String cor;
+  String sabor;
+  int diasDesdeColheita;
+  bool? isMadura;
 }
 
 funcQuantosDiasMadura(int dias) {
